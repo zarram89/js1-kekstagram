@@ -1,4 +1,4 @@
-import { getRandomPositiveInteger, getRandomArrayElement } from './utils.js';
+import { getRandomPositiveInteger, getRandomArrayElement } from './util.js';
 
 const commentLines = [
   'Всё отлично!',
@@ -24,7 +24,6 @@ const descriptions = [
 ];
 
 const names = ['Николай', 'Аким', 'Ким', 'Харитон', 'Тимур', 'Степан'];
-
 
 const createMessage = () =>
   Array.from({ length: getRandomPositiveInteger(1, 2) }, () =>
@@ -54,4 +53,4 @@ const getPictures = () =>
     createPicture(pictureIndex + 1)
   );
 
-export {getPictures};
+export { getPictures };
