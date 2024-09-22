@@ -5,10 +5,9 @@ const commentsLoader = document.querySelector('.comments-loader');
 const body = document.querySelector('body');
 const cancelButton = document.querySelector('.big-picture__cancel');
 
-const createComment = ({ avatar, name, message }) => {
+const createComment = ({avatar, message, name}) => {
   const comment = document.createElement('li');
-  comment.innerHTML =
-    '<img class="social__picture" src="" alt="" width="35" height="35"><p class="social__text"></p>';
+  comment.innerHTML =  '<img class="social__picture" src="" alt="" width="35" height="35"><p class="social__text"></p>';
   comment.classList.add('social__comment');
 
   comment.querySelector('.social__picture').src = avatar;
@@ -26,17 +25,16 @@ const renderComments = (comments) => {
     const commentElement = createComment(comment);
     fragment.append(commentElement);
   });
-
   commentList.append(fragment);
 };
 
 const hideBigPicture = () => {
   bigPicture.classList.add('hidden');
   body.classList.remove('modal-open');
-  document.removeEventListener('keydown', onEscKeyDown);
+  document.removeEventListener('keydown', onEscapeKeyDown);
 };
 
-function onEscKeyDown(evt) {
+function onEscapeKeyDown (evt) {
   if (evt.key === 'Escape') {
     evt.preventDefault();
     hideBigPicture();
@@ -47,7 +45,7 @@ const onCancelButtonClick = () => {
   hideBigPicture();
 };
 
-const renderPictureDetails = ({ url, likes, description }) => {
+const renderPictureDetails = ({url, likes, description}) => {
   bigPicture.querySelector('.big-picture__img img').src = url;
   bigPicture.querySelector('.big-picture__img img').alt = description;
   bigPicture.querySelector('.likes-count').textContent = likes;
@@ -56,10 +54,10 @@ const renderPictureDetails = ({ url, likes, description }) => {
 
 const showBigPicture = (data) => {
   bigPicture.classList.remove('hidden');
-  body.classList.add('modal-open');
-  commentsLoader.classList.add('hidden');
+  body.classList.add('.modal-open');
   commentCount.classList.add('hidden');
-  document.addEventListener('keydown', onEscKeyDown);
+  commentsLoader.classList.add('hidden');
+  document.addEventListener('keydown', onEscapeKeyDown);
 
   renderPictureDetails(data);
   renderComments(data.comments);
@@ -67,4 +65,4 @@ const showBigPicture = (data) => {
 
 cancelButton.addEventListener('click', onCancelButtonClick);
 
-export { showBigPicture };
+export {showBigPicture};
