@@ -1,6 +1,5 @@
-import { getPictures } from './data.js';
-import { renderPictures } from './picture.js';
-import './form.js';
+import {getPictures} from './data.js';
 
-renderPictures(getPictures());
-
+console.log(
+  getPictures()
+);
