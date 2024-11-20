@@ -1,4 +1,7 @@
-import { getRandomPositiveInteger, getRandomArrayElement } from './util.js';
+import {
+  getRandomPositiveInteger,
+  getRandomArrayElement
+} from './util.js';
 
 const COMMENT_LINES = [
   'Всё отлично!',
@@ -23,7 +26,14 @@ const DESCRIPTIONS = [
   'Норм',
 ];
 
-const NAMES = ['Николай', 'Аким', 'Ким', 'Харитон', 'Тимур', 'Степан'];
+const NAMES = [
+  'Николай',
+  'Аким',
+  'Ким',
+  'Харитон',
+  'Тимур',
+  'Степан'
+];
 
 const MessagesRange= {
   MIN: 1,
