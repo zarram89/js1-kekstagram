@@ -1,4 +1,7 @@
 import {getPictures} from './data.js';
 import { renderPictures } from './picture.js';
+import './big-picture.js';
 
-renderPictures(getPictures());
+const pictureContainer = document.querySelector('.pictures');
+
+renderPictures(getPictures(), pictureContainer);

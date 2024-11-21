@@ -1,10 +1,13 @@
+import { showBigPicture } from './big-picture.js';
+
 const pictureTemplate = document.querySelector('#picture')
   .content
   .querySelector('.picture');
-const container = document.querySelector('.pictures');
+
 
 const createPicture = (data) => {
   const {url, description, likes, comments} = data;
+
   const picture = pictureTemplate.cloneNode(true);
 
   picture.querySelector('.picture__img').src = url;
@@ -12,10 +15,14 @@ const createPicture = (data) => {
   picture.querySelector('.picture__comments').textContent =  comments.length;
   picture.querySelector('.picture__likes').textContent =  likes;
 
+  picture.addEventListener('click', () => {
+    showBigPicture(data);
+  });
+
   return picture;
 };
 
-const renderPictures = (pictures) => {
+const renderPictures = (pictures, container) => {
   const fragment = document.createDocumentFragment();
 
   pictures.forEach((picture) => {
@@ -27,7 +34,6 @@ const renderPictures = (pictures) => {
 };
 
 export {renderPictures};
-
 
 // import { showBigPicture } from './big-picture.js';
 
