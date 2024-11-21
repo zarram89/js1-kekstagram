@@ -1,6 +1,5 @@
-import {getPictures} from './data.js';
+import { getPictures } from './data.js';
 import { renderPictures } from './picture.js';
-import './big-picture.js';
 
 const pictureContainer = document.querySelector('.pictures');
 
