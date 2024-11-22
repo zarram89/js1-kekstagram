@@ -83,7 +83,7 @@ const validateTags = (value) => {
 pristine.addValidator(
   hashtagField,
   validateTags,
-  'Неправильно заполнены хэштеги'
+  'Неправильно заполнены хэштеги',
 );
 
 const onFormSubmit = (evt) => {

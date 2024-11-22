@@ -82,7 +82,7 @@ const showBigPicture = (pictureData) => {
   document.addEventListener('keydown', onEscKeyDown);
 
   renderPicturesDetails(pictureData);
-  comments = pictureData.comments;
+  comments = pictureData.comments.slice();
   if (comments.length > 0) {
     renderComments();
   }
