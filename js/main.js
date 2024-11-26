@@ -5,7 +5,6 @@ import { setOnFormSubmit, hideModal } from './form.js';
 import { showSuccessMessage, showErrorMessage } from './message.js';
 import { setOnFilterClick, turnFilterOn, filterPictures } from './filter.js';
 
-// const pictureContainer = document.querySelector('.pictures');
 
 const onGetDataSuccess = (data) => {
   turnFilterOn(data);
